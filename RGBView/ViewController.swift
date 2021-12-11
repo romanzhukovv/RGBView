@@ -34,27 +34,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func redSliderAction() {
-        redValueLabel.text = String(format: "%.2f",
-                                    redSlider.value)
-        rgbView.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value),
-                                          green: CGFloat(greenSlider.value),
-                                          blue: CGFloat(blueSlider.value),
-                                          alpha: 1)
+        sliderAction(colorValueLabel: redValueLabel, colorSlider: redSlider)
     }
     
     @IBAction func greenSliderAction() {
-        greenValueLabel.text = String(format: "%.2f",
-                                      greenSlider.value)
-        rgbView.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value),
-                                          green: CGFloat(greenSlider.value),
-                                          blue: CGFloat(blueSlider.value),
-                                          alpha: 1)
+        sliderAction(colorValueLabel: greenValueLabel, colorSlider: greenSlider)
         
     }
     
     @IBAction func blueSliderAction() {
-        blueValueLabel.text = String(format: "%.2f",
-                                     blueSlider.value)
+        sliderAction(colorValueLabel: blueValueLabel, colorSlider: blueSlider)
+    }
+    
+    private func sliderAction(colorValueLabel: UILabel, colorSlider: UISlider) {
+        colorValueLabel.text = String(format: "%.2f", colorSlider.value)
         rgbView.backgroundColor = UIColor(displayP3Red: CGFloat(redSlider.value),
                                           green: CGFloat(greenSlider.value),
                                           blue: CGFloat(blueSlider.value),
