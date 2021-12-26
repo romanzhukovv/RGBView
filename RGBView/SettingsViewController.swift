@@ -39,18 +39,22 @@ class SettingsViewController: UIViewController {
         view.endEditing(true)
     
     }
-    
-    @IBAction func redSliderAction() {
-        sliderAction(colorValueLabel: redValueLabel, colorValueTF: redValueTF, colorSlider: redSlider)
-    }
-    
-    @IBAction func greenSliderAction() {
-        sliderAction(colorValueLabel: greenValueLabel, colorValueTF: greenValueTF, colorSlider: greenSlider)
-        
-    }
-    
-    @IBAction func blueSliderAction() {
-        sliderAction(colorValueLabel: blueValueLabel, colorValueTF: blueValueTF, colorSlider: blueSlider)
+
+    @IBAction func slidersAction(_ sender: UISlider) {
+        switch sender {
+        case redSlider:
+            sliderAction(colorValueLabel: redValueLabel,
+                         colorValueTF: redValueTF,
+                         colorSlider: redSlider)
+        case greenSlider:
+            sliderAction(colorValueLabel: greenValueLabel,
+                         colorValueTF: greenValueTF,
+                         colorSlider: greenSlider)
+        default:
+            sliderAction(colorValueLabel: blueValueLabel,
+                         colorValueTF: blueValueTF,
+                         colorSlider: blueSlider)
+        }
     }
     
     @IBAction func doneButtonPressed() {
